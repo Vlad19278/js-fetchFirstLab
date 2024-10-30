@@ -5,10 +5,23 @@
 "https://jsonplaceholder.typicode.com/users - адреса куди робити запит"
 
 
-function updateUser(id, updatedData) {
-  // Ваш код
+async function updateUser(id, updatedData) {
+  const url = `https://jsonplaceholder.typicode.com/users/${id}`;
+
+  // Виконання PATCH-запиту
+  const response = await fetch(url, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(updatedData)
+  });
+
+  // Повернення відповіді від сервера
+  const data = await response.json();
+  return data;
 }
 
-console.log(updateUser(1, { name: 'New Name' }));
+// Виклик функції для перевірки роботи
 
 module.exports = updateUser;
