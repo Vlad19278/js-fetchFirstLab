@@ -8,7 +8,7 @@
 async function updateUser(id, updatedData) {
   const url = `https://jsonplaceholder.typicode.com/users/${id}`;
 
-  // Виконання PATCH-запиту
+  
   const response = await fetch(url, {
     method: 'PATCH',
     headers: {
@@ -17,11 +17,11 @@ async function updateUser(id, updatedData) {
     body: JSON.stringify(updatedData)
   });
 
-  // Повернення відповіді від сервера
+  
   const data = await response.json();
   return data;
 }
 
-// Виклик функції для перевірки роботи
+
 
 module.exports = updateUser;

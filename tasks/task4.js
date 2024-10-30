@@ -8,12 +8,12 @@ async function deleteUser(id) {
   const url = `https://jsonplaceholder.typicode.com/users/${id}`;
 
   try {
-    // Виконання DELETE-запиту
+    
     const response = await fetch(url, {
       method: 'DELETE'
     });
 
-    // Повернення об'єкта response
+    
     return response;
   } catch (error) {
     console.error('Error:', error);
